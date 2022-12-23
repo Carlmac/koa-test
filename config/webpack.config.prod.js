@@ -29,7 +29,17 @@ const config = merge(baseConfig, {
           sourceMap: false,
         }
       ),
-    ]
+    ],
+    splitChunks: {
+      cacheGroups: {
+        commons: {
+          name: 'commons',
+          chunks: 'initial',
+          minChunks: 3,
+          enforce: true,
+        }
+      }
+    },
   }
 })
 
